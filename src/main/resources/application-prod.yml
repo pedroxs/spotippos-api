@@ -1,0 +1,17 @@
+spring:
+    devtools:
+        restart:
+            enabled: false
+        livereload:
+            enabled: false
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017
+            database: spotippos-api
+
+server:
+    port: 8080
+    compression:
+        enabled: true
+        mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+        min-response-size: 1024

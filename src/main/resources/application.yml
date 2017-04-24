@@ -1,0 +1,31 @@
+spring:
+    application:
+        name: @artifactId@
+    profiles:
+        active: dev
+    jackson:
+        default-property-inclusion: non_null
+        serialization:
+            write_dates_as_timestamps: false
+            write_null_map_values: false
+            write_enums_using_to_string: true
+        deserialization:
+            fail_on_unknown_properties: false
+            read_enums_using_to_string: true
+
+management:
+    context-path: /management
+    security:
+      enabled: false
+
+swagger:
+  default-include-pattern: /api/.*
+  title: Spotippos API
+  description: Spotippos API documentation
+  version: 0.0.1
+  terms-of-service-url:
+  contact-name:
+  contact-url:
+  contact-email:
+  license:
+  license-url:

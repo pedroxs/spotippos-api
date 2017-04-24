@@ -1,0 +1,17 @@
+spring:
+    profiles:
+        active: dev
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: true
+    jackson:
+        serialization.indent_output: true
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017
+            database: spotippos-api
+
+server:
+    port: 8080

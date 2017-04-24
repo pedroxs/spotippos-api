@@ -1,0 +1,13 @@
+version: '2'
+services:
+    spotippos-api-mongodb:
+        container_name: spotippos-api-mongodb
+        image: mongo:3.4.3
+        ports:
+            - "27017:27017"
+networks:
+  default:
+    ipam:
+      config:
+      - subnet: 172.178.0.0/26
+        gateway: 172.178.0.1
