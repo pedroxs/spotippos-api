@@ -25,7 +25,7 @@ public class ProvinceTest {
     @Test
     public void testDeserialize() throws Exception {
         String content = "{\"name\":\"Gode\",\"boundaries\":{\"upperLeft\":{\"x\":0,\"y\":1000},\"bottomRight\":{\"x\":600,\"y\":500}}}";
-        assertThat(this.json.parse(content)).isEqualTo(getExpectedProvince());
+        assertThat(json.parse(content)).isEqualTo(getExpectedProvince());
     }
 
     private Province getExpectedProvince() {
@@ -33,7 +33,6 @@ public class ProvinceTest {
                 .upperLeft(Boundary.builder().x(0).y(1000).build())
                 .bottomRight(Boundary.builder().x(600).y(500).build())
                 .build();
-        Province province = new Province("Gode", boundaries);
-        return province;
+        return new Province("Gode", boundaries);
     }
 }
