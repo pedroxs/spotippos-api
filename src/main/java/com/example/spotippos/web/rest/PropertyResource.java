@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.math.BigInteger;
+import java.net.URI;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 
@@ -22,17 +24,18 @@ public class PropertyResource {
             consumes = APPLICATION_JSON_UTF8_VALUE,
             produces = APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<Property> createProperty(@Valid @RequestBody Property property) {
-        return ResponseEntity.ok(propertyService.save(property));
+        Property result = propertyService.save(property);
+        return ResponseEntity.created(URI.create("/api/properties/" + result.getId().toString())).body(result);
     }
 
     @GetMapping(path = "properties/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Property> getProperty(@PathVariable Long id) {
+    public ResponseEntity<Property> getProperty(@PathVariable BigInteger id) {
         return propertyService.findOne(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping(path = "properties")
+    @GetMapping(path = "properties", produces = APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<SearchResult> searchProperty(@RequestParam("ax") Integer ax,
                                                        @RequestParam("ay") Integer ay,
                                                        @RequestParam("bx") Integer bx,

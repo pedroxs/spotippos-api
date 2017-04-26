@@ -21,8 +21,8 @@ public class PropertyService {
         return propertyRepository.save(property);
     }
 
-    public Optional<Property> findOne(Long id) {
-        return Optional.ofNullable(propertyRepository.findOne(BigInteger.valueOf(id)));
+    public Optional<Property> findOne(BigInteger id) {
+        return Optional.ofNullable(propertyRepository.findOne(id));
     }
 
     /**

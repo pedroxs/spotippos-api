@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "title": "Imóvel código 1, com 3 quartos e 2 banheiros.",
+  "price": 643000,
+  "description": "Laboris quis quis elit commodo eiusmod qui exercitation. In laborum fugiat quis minim occaecat id.",
+  "x": 1257,
+  "y": 928,
+  "beds": 3,
+  "baths": 2,
+  "provinces": [
+    "Jaby"
+  ],
+  "squareMeters": 61
+}

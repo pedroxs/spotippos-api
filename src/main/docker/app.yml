@@ -1,0 +1,24 @@
+version: '2'
+services:
+    spotippos-api-app:
+        image: spotippos-api
+        external_links:
+            - spotippos-api-mongodb:mongodb
+        environment:
+            - SPRING_PROFILES_ACTIVE=dev
+            - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017
+            - STARTUP_SLEEP=40 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+
+    spotippos-api-mongodb:
+        extends:
+            file: mongodb.yml
+            service: spotippos-api-mongodb
+
+networks:
+  default:
+    ipam:
+      config:
+      - subnet: 172.178.0.0/26
+        gateway: 172.178.0.1
