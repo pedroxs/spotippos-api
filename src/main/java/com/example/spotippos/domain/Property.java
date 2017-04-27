@@ -17,9 +17,6 @@ import javax.validation.constraints.NotNull;
 import java.math.BigInteger;
 import java.util.List;
 
-//import com.mongodb.client.model.geojson.Point;
-//import com.mongodb.client.model.geojson.Position;
-
 /**
  * The type Property.
  */
