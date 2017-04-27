@@ -1,0 +1,19 @@
+{
+  "name": "spotippos-api",
+  "description": "Spotippos API",
+  "scripts": {
+  },
+  "env": {
+    "SPRING_PROFILES_ACTIVE": "prod"
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    }
+  ]
+}
