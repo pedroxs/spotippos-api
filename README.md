@@ -1,6 +1,7 @@
 # Spotippos API
 
 API to create and search properties on Spotippos mystical world.
+Try it [here](https://pedroxs-spotippos-api.herokuapp.com/swagger-ui.html#!/property-resource/searchPropertyUsingGET)!
 
 ## Development
 
